@@ -1,6 +1,20 @@
-apply plugin: 'java'
-apply plugin: 'jacoco'
-apply plugin: 'war'
+plugins {
+    id 'java'
+    id 'war'
+    id 'jacoco'
+    //id("org.openrewrite.rewrite") version("7.1.4")
+}
+
+//apply plugin: 'java'
+//apply plugin: 'jacoco'
+//apply plugin: 'war'
+
+/*rewrite {
+    activeRecipe("com.oracle.weblogic.rewrite.UpgradeTo1511")
+    activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")
+    activeRecipe("com.oracle.weblogic.rewrite.JakartaEE9_1")
+    setExportDatatables(true)
+}*/
 
 description = 'StudentWebAppGradle'
 repositories {
@@ -8,6 +22,9 @@ repositories {
 }
 
 dependencies {
-    providedCompile 'javax:javaee-web-api:8.0'    
-    testImplementation     'junit:junit:4.13'
+    //providedCompile 'javax:javaee-web-api:8.0'    
+    //testImplementation 'junit:junit:4.13'
+    //rewrite("org.openrewrite.recipe:rewrite-migrate-java:3.2.0")
+    //rewrite("com.oracle.weblogic.rewrite:rewrite-weblogic:+")
+    compileOnly group: 'javax', name: 'javaee-api', version: '8.0'
 }
