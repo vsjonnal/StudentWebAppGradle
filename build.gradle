@@ -21,6 +21,11 @@ repositories {
     mavenCentral()
 }
 
+compileJava   {
+  sourceCompatibility = '17'
+  targetCompatibility = '17'
+}
+
 dependencies {
     //providedCompile 'javax:javaee-web-api:8.0'    
     //testImplementation 'junit:junit:4.13'
